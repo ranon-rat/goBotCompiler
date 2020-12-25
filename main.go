@@ -69,7 +69,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if len(m.Content) > 9 {
-		if m.Content[:9] == "$compile " {
+		if m.Content[:9] == "$compile " && delete.MatchString(m.Content) {
 
 			programName := "clientPrograms/" + m.ID + ".go"
 			//make the programm
