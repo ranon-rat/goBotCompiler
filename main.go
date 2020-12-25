@@ -16,8 +16,8 @@ import (
 
 // Variables used for command line parameters
 var (
-	delete = regexp.MustCompile("\\`\\`\\`go|(\\`\\`\\`)")
-
+	delete      = regexp.MustCompile("\\`\\`\\`go|(\\`\\`\\`)")
+	noLoops     = regexp.MustCompile("for\\n?\\{")
 	sintaxError = &discordgo.MessageEmbed{
 		Title:       "SomethingWrong",
 		Description: "check your code",
@@ -69,7 +69,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if len(m.Content) > 9 {
-		if m.Content[:9] == "$compile " && delete.MatchString(m.Content) {
+		if m.Content[:9] == "$compile " && delete.MatchString(m.Content) && !noLoops.MatchString(m.Content) {
 
 			programName := "clientPrograms/" + m.ID + ".go"
 			//make the programm
