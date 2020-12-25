@@ -2,7 +2,8 @@
 <h1 align="center"> goDiscordCompiler</h1>
 <h4>this is a simple discord bot.
  </h4>
-<h4>not really made for everyone to use
+<h4>
+its not really made for everyone to use
 </h4>
 <h4>but if you want you can deploy it on your own discord server
 </h4>
