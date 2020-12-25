@@ -1,5 +1,5 @@
 
-<h1 align="center"> goDiscordCompiler</h1>
+<h1 align="center"> goBotCompiler</h1>
 <h4>this is a simple discord bot.
 It is not made for everyone to use
 but if you want you can deploy it on your own discord server
